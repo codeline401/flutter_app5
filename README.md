@@ -2,15 +2,21 @@
 
 A new Flutter project.
 
-## Getting Started
+Declaring SingleTickerProviderStateMixin to the AnimatedBalloonWidget widget class
+allows us to set the AnimationController vsync argument.
 
-This project is a starting point for a Flutter application.
+The SingleTickeProviderStateMixin allows only one AnimationController.
 
-A few resources to get you started if this is your first Flutter project:
+We added AnimationController ande declared the _controller variable to animate both the 
+floating upward or downward and inflation or deflation of the balloon.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+We declared the _animationFloatUp varaible to hold the value form the Tween animation to show
+the balloon either floating upward or downward by setting the top margin of the Container widget
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+We also declared the _animationGrowSize variable to hold the value from the Tween animation to 
+show the balloon either inflating or deflating by setting the width value of the Container widget.
+
+The AnimationBuilder contructor takes animation, builder, and child arguments.
+Next, we passed the _animationFloatUp animation to the AnimatedBuilder constructor.
+
+The Animatedbuilder builder argument returns a Container widget with the child as an Image wrapped in a GestureDetector widget.
